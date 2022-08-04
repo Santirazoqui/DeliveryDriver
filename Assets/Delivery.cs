@@ -26,8 +26,8 @@ public class Delivery : MonoBehaviour
         if(other.tag == "Package" && !hasPackage)
         {
             Debug.Log("package picked up");
-            //SpriteRenderer packageSpriteRenderer = other.GetComponent<SpriteRenderer>();
-            spriteRenderer.color = hasPackageColor;//packageSpriteRenderer.Color;
+            SpriteRenderer packageSpriteRenderer = other.GetComponent<SpriteRenderer>();
+            spriteRenderer.color = packageSpriteRenderer.color;
             hasPackage = true;
             Destroy(other.gameObject, destroyDelay);
         } 
